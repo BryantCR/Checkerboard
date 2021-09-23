@@ -8,14 +8,17 @@
     </head>
     <body>
         <h1 style="flex-direction: row; justify-content: center; justify-items: center; text-align: center;">
-            Welcome!
+            ***Checkerboard***
         </h1>
-        <main style="text-align: center; justify-content: center;">
+        <main style="display: flex; border: 3px solid red;">
+            <div style="display:flex; flex-direction: row; flex: 1; border: 3px solid blue;">
             {% for i in range (0, numbers, 1): %}
 
-                <div style="background-color: {{color1}}; border: 3px solid black; height: 200px; width: 200px; display: inline-block;"></div>
+                <div style="background-color: red; border: 3px solid black; height: 120px; width: 120px; display: inline-block;"></div>
+                <div style="background-color: black; border: 3px solid black; height: 120px; width: 120px; display: inline-block;"></div>
 
             {% endfor %}
+            </div>
         </main>
     </body>
 </html>
