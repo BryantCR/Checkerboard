@@ -3,22 +3,28 @@
     <head>
         <meta charset="utf-8">
         <title>
-            Playgound
+            Checkerboard
         </title>
     </head>
     <body>
         <h1 style="flex-direction: row; justify-content: center; justify-items: center; text-align: center;">
             ***Checkerboard***
         </h1>
-        <main style="display: flex; border: 3px solid red;">
-            <div style="display:flex; flex-direction: row; flex: 1; border: 3px solid blue;">
-            {% for i in range (0, numbers, 1): %}
-
-                <div style="background-color: red; border: 3px solid black; height: 120px; width: 120px; display: inline-block;"></div>
-                <div style="background-color: black; border: 3px solid black; height: 120px; width: 120px; display: inline-block;"></div>
-
+        <main style="display: flex;">
+            <table style="display:flex; flex-direction: column; flex: 1;">
+            {% for n in range (0, rwo, 1): %}
+                <tr>
+                    {% for i in range (0, column, 1): %}
+                        {% if (n+i) % 2 == 0 %}
+                        <td style="background-color: {{rowColor}}; border: 3px solid black; height: 60px; width: 60px;"></td>
+                        {% else %}
+                        <td style="background-color: {{columnColor}}; border: 3px solid black; height: 60px; width: 60px;"></td>
+                        {%  endif %}
+                    {% endfor %}
+                </tr>
             {% endfor %}
-            </div>
+            </table>
         </main>
     </body>
 </html>
+
